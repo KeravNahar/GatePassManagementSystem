@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/idprint.css' %}">
+
+    <title>ID Visitor</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">ID-Card Display</div>
+        <form action="#">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Visitor ID</span>
+                    <input type="text" value={{id}}  readonly>
+                </div>
+                <div class="input-box">
+                    <span class="details">Name of the Visitor</span>
+                    <input type="text" value={{name}} readonly>
+                </div>
+                <div class="input-box">
+                    <span class="details">Mobile Number</span>
+                    <input type="text" value={{mobile}} readonly>
+                </div>
+                <div class="input-box">
+                    <span class="details">Date of Arrival</span>
+                    <input type="text" value={{dateofarrival}} readonly>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="Print">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

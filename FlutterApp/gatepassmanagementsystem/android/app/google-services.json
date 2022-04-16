@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "222521849194",
+    "project_id": "gpms-9bc10",
+    "storage_bucket": "gpms-9bc10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222521849194:android:fcc4203baa0ba768e46113",
+        "android_client_info": {
+          "package_name": "com.example.gatepassmanagementsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "222521849194-9j0o0999dksc6cgiq583a9l8tojis7pr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC03huIOpp5Gpt5N2EONXavJfG6V6WnN_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "222521849194-9j0o0999dksc6cgiq583a9l8tojis7pr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
