@@ -74,11 +74,11 @@ form .user-details .input-box .details{
 .user-details .input-box input:valid{
     border-color:maroon;
 }
-form .button{
+.button{
     height: 45px;
     margin: 45px 0;
 }
-form .button input{
+.button{
     height: 100%;
     width: 100%;
     outline: none;
@@ -90,7 +90,7 @@ form .button input{
     letter-spacing: 1px;
     background: maroon;
 }
-form .button input:hover{
+.button:hover{
     background: red;
 }
 .user-details::-webkit-scrollbar{

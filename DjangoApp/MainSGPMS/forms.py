@@ -8,18 +8,20 @@ CHOICES=(('YES','Yes'),('NO','No'))
 class newVisitorForm(forms.ModelForm):
     exit = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect,label='Exit Approved')
     approval = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect,label='Visitation Approved')
+    img =  forms.ImageField()
     class Meta:
         model = newVisitor
         fields = ['id','name','mobile','email',
         'datetime_oa',
         'city','reason','novisitor',
-        'faculty','approval','exit']
+        'faculty','img','approval','exit']
         labels = {
             'id':'Visitor ID number',
             'name':'Full Name', 'datetime_oa': 'Arrival Time and Date', 'reason':'Visitation Reason', 
             'mobile':'Mobile No.', 'email':'Email Address', 
             'novisitor':'Number of Visitors','faculty':'Faculty for approval',
-            'approval':'Visitation Approved','exit':'Exit Approved'
+            'approval':'Visitation Approved','exit':'Exit Approved',
+            'img': 'Image'
             }
         widgets = {
             'id':forms.TextInput(attrs={'class':'form-control'}),

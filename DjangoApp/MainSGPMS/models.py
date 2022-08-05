@@ -1,12 +1,11 @@
 from datetime import datetime
-import email
 from django.db import models
 from pandas import notnull
 
 Fac_CHOICE=(
-    ('email chief','Cheif Warden (Boys)'),
-    ('email cheif','Cheif Warden (Girls)'),
-    ('email deen','Student Deen Affairs'),
+    ('chief.warden5@niituniversity.in','Cheif Warden (Boys)'),
+    ('warden.girls@niituni.in','Cheif Warden (Girls)'),
+    ('student.deen@niituniversity.in','Student Deen Affairs'),
     )
 
 
@@ -20,5 +19,6 @@ class newVisitor(models.Model):
     reason = models.CharField(max_length=1000)
     novisitor = models.PositiveIntegerField()
     faculty = models.CharField(choices=Fac_CHOICE, max_length=50)
+    img = models.ImageField(upload_to = "", blank=True)
     approval = models.CharField(max_length=100,null=True,blank=True)
     exit = models.CharField(max_length=100,null=True,blank=True)

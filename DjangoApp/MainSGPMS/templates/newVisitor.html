@@ -2,62 +2,144 @@
 
 <!DOCTYPE html>
 <html lang="en">
+   <style>
+       .button-1{
+  width: 90%;
+  height: 50px;
+  margin-bottom: 15px;
+  border: 1px solid;
+  background: maroon;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+
+.button-1:hover{
+    border-color: red;
+    background-color: red;
+    transition: .5s;
+}
+.nav-bar{
+    background-color: maroon;
+    height: 60px;
+}
+    .header-img {
+  width: 100%;
+  height: 25px;
+  background-size: cover;
+}
+.menu {
+  float: right;
+  color: white;
+}
+.menu ul {
+  list-style: none;
+  margin: 8px;
+  padding: 0
+}
+.menu li {
+  display: inline-block;
+  padding: 0 20px;
+  color: white;
+}
+.menu a {
+  text-decoration: none;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Roboto';
+  color: white;
+}
+.menu a:hover {
+  color: whitesmoke;
+}
+   </style>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/newvisitor.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <title>Visitor Entry</title>
 </head>
 <body>
-    <h3>New Visitor Form</h3>
+    <div class="nav-bar">
+        <header>
+            <div class="menu">
+              <ul>
+                <li><a href="/homep/">Home</a></li>
+                <li><a href='/listVisitor/'>List</a></li>
+                <li><a href='/newVisitor/'>New Visitor</a></li>
+                <li><a href='/logout/'>Logout</a></li>
+              </ul>
+            </div>
+          </header>
+          </div>
+    <div class="center">
+    <h3 style="text-align: center ;padding-top: 20px;">New Visitor Form</h3>
     <form action="/display/" method="post" enctype="multipart/form-data" class="shadow p-5">
         {% csrf_token %}
         <div class="user-details">
-          <div class="input-box">
+          <div class="form-group">
               <span class="details">Visitor ID</span>
-              <input type="text" name="id" required>
+              <input type="text" class="form-control-range" name="id" required>
           </div>
-          <div class="input-box">
+          <div class="form-group">
               <span class="details">Name of the Visitor</span>
-              <input type="text" name="name" required>
+              <input type="text" class="form-control-range" name="name" required>
           </div>
-          <div class="input-box">
+          <div class="form-group">
               <span class="details">Mobile Number</span>
-              <input type="text" name="mobile" required>
+              <input type="text" class="form-control-range" name="mobile" required>
           </div>
-          <div class="input-box">
+          <div class="form-group">
               <span class="details">Date of Arrival</span>
-              <input type="date" name="datetime_oa" required>
+              <input type="date" class="form-control-range" name="datetime_oa" required>
           </div>
           <div class="user-details">
-            <div class="input-box">
+            <div class="form-group">
                 <span class="details">Reason</span>
-                <textarea type="text"  name="reason"  required></textarea>
+                <textarea type="text" class="form-control-range" name="reason"  required></textarea>
             </div>
-            <div class="input-box">
+            <div class="form-group">
                 <span class="details">Email Address</span>
-                <input type="text"  name="email" required>
+                <input type="text" class="form-control-range" name="email" required>
             </div>
-            <div class="input-box">
+            <div class="form-group">
               <span class="details">City</span>
-              <input type="text"  name="city" required>
+              <input type="text" class="form-control-range"  name="city" required>
           </div>
-            <div class="input-box">
+            <div class="form-group">
                 <span class="details">Number of Visitors</span>
-                <input type="number"  name="novisitor" required>
+                <input type="number" class="form-control-range" name="novisitor" required>
             </div>
 
 
-            <div class="input-box">
+            <div class="form-group">
                 <span class="details">Faculty for Approval</span>
                 <select id="faculty" name="faculty">
-                  <option value="mail_studentdeen">Student Deen</option>
-                  <option value="mail_wardenboys">Cheif Warden(Boys)</option>
-                  <option value="mail_wardengirls">Cheif Warden(Girls)</option>
+                  <option value="student.deen@niituniversity.in">Student Deen</option>
+                  <option value="chief.warden5@niituniversity.in">Cheif Warden(Boys)</option>
+                  <option value="warden.girls@niituni.in">Cheif Warden(Girls)</option>
                 </select>
             </div>
+
+            <div class="user-image">
+                <label for="id_img">Image:</label>
+                <input type="file" name="img" accept="image/*" id="id_img">
+                  {% if img %}
+                  <img src = {{img.url}} width = '125' height="125">
+                  {% endif %}
+              </div>
+
             <div class="user-details">
               <div class="radio-container">
                   <span class="details">Approval </span>
@@ -65,19 +147,21 @@
                   <label for="yes">Yes</label>
 
                   <input type="radio" id="no" value="NO" name="approval" />
-                  <label for="no">No</label>    
+                  <label for="no">No</label>
               </div>
-              <div class="input-box">
+              <div class="form-group">
                   <span class="details">Exit Procedure</span>
                   <input type="radio" id="yes" value="YES" name="exit" />
                   <label for="yes">Yes</label>
 
                   <input type="radio" id="no" value="NO" name="exit" />
-                  <label for="no">No</label>    
+                  <label for="no">No</label>
               </div>
+              
+              <button type="submit" class="button-1" name="buttonSubmit" value="Submit">Submit</button>
 
-              <input type="submit" value="Submit" name="buttonSubmit">
+
        </form>
-       <button type="button" name="buttonEmail" onclick="location.href='mailto:{{fac_email}}?subject=Permission%20to%20visit%20campus&body=Name%3A%20{{name}}%0D%0ADate%20of%20arrival%3A%20{{dateofarrival}}%0D%0AReason%3A%20{{reason}}%0D%0ANumber%20of%20visitors%3A%20{{novisitor}}%0D%0AContact%20number%20%3A%20{{mobile}}%0D%0ACity%20from%3A%20{{city}}'">Send Approval</button>
+    </div>
 </body>
 </html>

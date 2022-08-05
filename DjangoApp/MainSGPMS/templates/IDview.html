@@ -7,14 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/idprint.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>ID Visitor</title>
 </head>
 <body>
     <div class="container">
         <div class="title">ID-Card Display</div>
+        <button onclick="location.href='/listVisitor/'" style="
+        background-color: maroon;
+        border: none;
+        color: white;
+        padding: 12px 16px;
+        font-size: 16px;
+        border-radius: 50px;
+        cursor: pointer; 
+        "><i class="fa fa-close"></i></button>
         <form action="#">
-            <div class="user-details">
+            <div class="user-details" style="align-items:center ;">
+                <div class="user-image">
+                      {% if img_url %}
+                      <img src = "{{img_url}}" width = '125' height="125">
+                      {% endif %}
+                  </div>
                 <div class="input-box">
                     <span class="details">Visitor ID</span>
                     <input type="text" value={{id}}  readonly>
@@ -32,9 +47,19 @@
                     <input type="text" value={{dateofarrival}} readonly>
                 </div>
             </div>
-            <div class="button">
-                <input type="submit" value="Print">
-            </div>
+            <button onclick="window.print();return false;" style="
+            height: 50px; 
+            margin: 45px 0; 
+            width: 100%;
+            outline: none;
+            color: #fff;
+            border: none;
+            font-size: 18px;
+            font-weight: 500;
+            border-radius: 25px;
+            letter-spacing: 1px;
+            background: maroon;
+            ">Print</button>
         </form>
     </div>
 </body>
