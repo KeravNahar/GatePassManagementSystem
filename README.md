@@ -1,0 +1,27 @@
+# GatePassManagementSystem
+# Django - Flutter based project
+
+Student Gate Pass System at NU: Not under operation since COVID arrived.
+Handwritten Entries: In the 21st century with all softwares available, using notepads is inefficient.
+Record Maintenance and Productive Communication: All record can be stored and respective people are kept well informed
+
+Scope:
+Verification: Software can be used to verify details, phone numbers, capture picture etc.
+Dual Auth: The ID card must be signed by the person he/she is visiting and return it to the security guard when he is leaving the campus.
+Info to the person: The NU faculty/staff who are supposed to meet the visitor will get a notification and also approve the visitor if required. 
+
+Tools:
+Django, Flutter, HTML, CS, JS
+Text Editor: VS Code
+
+GPMS:
+- On Spot Entry (Django)
+Guard Login
+Form for entry
+Generation of ID for printing
+
+- Pre-Booked Entry & Guard Registration (Flutter)
+Pre-Booked Entry - shows form for pre approval
+Guard Registration - Super Admin Guard Login
+                   - Creating account for guards
+                   - Viewing guard database
